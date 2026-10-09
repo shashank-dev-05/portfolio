@@ -276,6 +276,9 @@ section{padding:clamp(4.5rem,10vw,8rem) 0;position:relative}
 .golive{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mint);border:1px solid color-mix(in srgb,var(--mint) 38%,transparent);background:color-mix(in srgb,var(--mint) 9%,transparent);padding:.5rem .9rem;border-radius:8px;margin-bottom:1.2rem;transition:all .35s var(--ease)}
 .golive:hover{background:color-mix(in srgb,var(--mint) 18%,transparent);transform:translateY(-3px)}
 .golive i{width:6px;height:6px;border-radius:50%;background:var(--mint);box-shadow:0 0 10px var(--mint);font-style:normal;animation:pulse 2.2s infinite}
+.linkrow{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.3rem}
+.noaccess{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--mono);font-size:.64rem;letter-spacing:.09em;text-transform:uppercase;color:var(--dim);border:1px dashed var(--line2);padding:.5rem .9rem;border-radius:8px}
+.noaccess i{width:6px;height:6px;border-radius:50%;background:var(--dim);font-style:normal}
 
 /* ═════════ STACK ═════════ */
 .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:1.1rem}
@@ -299,6 +302,18 @@ section{padding:clamp(4.5rem,10vw,8rem) 0;position:relative}
 .ebox h3{font-size:1.1rem;font-weight:700;letter-spacing:-.025em;margin-bottom:.3rem}
 .ebox .t{color:var(--muted);font-size:.87rem}
 .ebox .m{font-family:var(--mono);font-size:.63rem;color:var(--dim);margin-top:.65rem;letter-spacing:.07em}
+
+/* ═════════ SCALE ═════════ */
+.scales{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem}
+.scale{padding:1.8rem;border-radius:16px;display:grid;grid-template-columns:1fr auto 1fr;gap:1rem;align-items:center}
+.scale p{grid-column:1/-1;color:var(--muted);font-size:.88rem;margin-top:.4rem}
+.sfrom,.sto{font-family:var(--mono);font-size:.57rem;letter-spacing:.13em;text-transform:uppercase;color:var(--dim)}
+.sfrom b,.sto b{display:block;margin-top:.45rem;font-family:var(--sans);font-size:.95rem;font-weight:700;letter-spacing:-.025em;text-transform:none;color:var(--ink);line-height:1.25}
+.sto b{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sarrow{font-size:1.25rem;color:var(--rzp);opacity:.7;align-self:end;padding-bottom:.1rem}
+.thesis-box{margin-top:1.1rem;padding:2rem;border-radius:16px}
+.thesis-box .lbl{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.thesis-box p{font-size:1.05rem;line-height:1.7;color:var(--ink);max-width:76ch}
 
 /* ═════════ CONTACT ═════════ */
 .cta{text-align:center;padding:clamp(3rem,7vw,5rem) clamp(1.3rem,4vw,3rem);border-radius:22px}
@@ -325,6 +340,9 @@ footer{padding:2.8rem 0 4rem;border-top:1px solid var(--line)}
   .navlist{display:none}
   .hero{min-height:auto;padding-top:calc(106px + env(safe-area-inset-top,0px))}
   .spec{gap:1.4rem}
+  .scales{grid-template-columns:1fr}
+  .scale{grid-template-columns:1fr;gap:.7rem}
+  .sarrow{transform:rotate(90deg);align-self:center;padding:0}
 }
 @media(max-width:560px){
   .mgrid{grid-template-columns:1fr}
@@ -359,6 +377,7 @@ footer{padding:2.8rem 0 4rem;border-top:1px solid var(--line)}
     <li><a href="#work">Work</a></li>
     <li><a href="#track">Track</a></li>
     <li><a href="#stack">Stack</a></li>
+    <li><a href="#scale">Scale</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <button class="swap" id="swapBtn" aria-label="Switch between night and day mode">
@@ -461,6 +480,7 @@ footer{padding:2.8rem 0 4rem;border-top:1px solid var(--line)}
         </button>
         <div class="casebody"><div class="caseinner">
           <div>
+            <div class="linkrow" data-link="vcip"></div>
             <p>The verification team ran on spreadsheets, chat messages and memory. I rebuilt it as one portal covering the entire maker/checker workflow — case logging, quality review, all-case search, live statistics, login reports and role-scoped views, so an agent sees their own work and an admin sees everything.</p>
             <div class="nums">
               <div class="num"><span class="nv">2,000+</span><span class="nl">cases handled daily</span></div>
@@ -487,7 +507,7 @@ footer{padding:2.8rem 0 4rem;border-top:1px solid var(--line)}
         </button>
         <div class="casebody"><div class="caseinner">
           <div>
-            <a class="golive" href="https://pos-ops-portal.vercel.app/" target="_blank" rel="noopener"><i></i>pos-ops-portal.vercel.app ↗</a>
+            <div class="linkrow" data-link="pos"></div>
             <p>Five live reporting dashboards for the POS business, pulling straight from the Freshdesk API and Google Sheets — so nobody rebuilds the same report every week. Time-aware greeting, live KPI strip, light and dark themes, auth-gated.</p>
             <div class="nums">
               <div class="num"><span class="nv">5</span><span class="nl">live dashboards</span></div>
@@ -514,6 +534,7 @@ footer{padding:2.8rem 0 4rem;border-top:1px solid var(--line)}
         </button>
         <div class="casebody"><div class="caseinner">
           <div>
+            <div class="linkrow" data-link="ai"></div>
             <p>Quality review meant watching every verification call end to end and ticking a checklist by hand. I built a pipeline that does the tedious part: a Chrome extension pulls call and case data, a Flask backend transcribes it, and a three-tier engine scores it against the SOP. The reviewer still makes every final call — the system just stops them having to hunt for it.</p>
             <div class="nums">
               <div class="num"><span class="nv">8min → 30s</span><span class="nl">per-call review time</span></div>
@@ -540,6 +561,7 @@ footer{padding:2.8rem 0 4rem;border-top:1px solid var(--line)}
         </button>
         <div class="casebody"><div class="caseinner">
           <div>
+            <div class="linkrow" data-link="roster"></div>
             <p>Shift and checker allocation was being done by hand, which meant it was also being done unevenly — and nobody could prove otherwise either way. I replaced it with an engine that assigns duty on transparent rules and shows its working, so every agent can see exactly why they got what they got.</p>
             <div class="nums">
               <div class="num"><span class="nv">Auditable</span><span class="nl">every assignment explainable</span></div>
@@ -658,6 +680,52 @@ footer{padding:2.8rem 0 4rem;border-top:1px solid var(--line)}
   </div>
 </section>
 
+<!-- ═════════ SCALE ═════════ -->
+<section id="scale">
+  <div class="wrap">
+    <div class="head rv">
+      <div class="kick"><b>06 — Where this scales</b></div>
+      <h2 class="h2">None of these are <em>one-team problems.</em></h2>
+      <p class="sub">I built each of these for the verification team because that's the team I sit in. But the underlying pattern isn't specific to verification — it's specific to how operations teams work. Here's where each one travels.</p>
+    </div>
+
+    <div class="scales">
+      <div class="scale glass rv">
+        <div class="sfrom">Built for<b>Maker/checker verification</b></div>
+        <div class="sarrow">→</div>
+        <div class="sto">Applies to<b>Any two-step review process</b></div>
+        <p>Case logging, role-scoped views, live stats and an audit trail. Any team where one person decides and another signs off has the same shape — onboarding, risk review, refunds, disputes, KYC re-verification.</p>
+      </div>
+
+      <div class="scale glass rv d1">
+        <div class="sfrom">Built for<b>Call quality audits</b></div>
+        <div class="sarrow">→</div>
+        <div class="sto">Applies to<b>Any SOP-scored interaction</b></div>
+        <p>The three-tier engine doesn't know it's auditing verification calls. Point it at a different SOP and it scores tickets, chats or emails the same way. The expensive LLM step only fires on genuine ambiguity, so cost stays near zero at scale.</p>
+      </div>
+
+      <div class="scale glass rv d2">
+        <div class="sfrom">Built for<b>Checker allocation</b></div>
+        <div class="sarrow">→</div>
+        <div class="sto">Applies to<b>Any rostered duty</b></div>
+        <p>Fairness scoring with a defensible audit view solves a people problem, not a verification problem. Every team that assigns duty by hand has the same trust gap — and the same manager fielding the same complaint.</p>
+      </div>
+
+      <div class="scale glass rv d3">
+        <div class="sfrom">Built for<b>POS reporting</b></div>
+        <div class="sarrow">→</div>
+        <div class="sto">Applies to<b>Any report rebuilt by hand</b></div>
+        <p>Pulling live from Freshdesk and Sheets instead of exporting and pasting. If a team is rebuilding the same view every Monday, that's a connector and a dashboard, not a recurring four hours.</p>
+      </div>
+    </div>
+
+    <div class="thesis-box glass rv d2">
+      <div class="lbl">What I'd want to do with this</div>
+      <p>The pattern I keep hitting is that operations teams know exactly what's broken and have no route to fixing it in software. The gap isn't ideas or engineering capacity — it's that nobody sits in both places. I want to be the person who does: close enough to the floor to know which problem is real, technical enough to ship the fix, and disciplined enough to build it so it survives contact with compliance and scale.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ═════════ CONTACT ═════════ -->
 <section id="contact">
   <div class="wrap">
@@ -685,6 +753,35 @@ footer{padding:2.8rem 0 4rem;border-top:1px solid var(--line)}
 "use strict";
 var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var root = document.documentElement;
+
+/* ══════════════════════════════════════════════════════════
+   PROJECT LINKS — edit these four lines only.
+   Put a URL in to make the project clickable.
+   Leave '' and it shows "internal — walkthrough on request".
+   ══════════════════════════════════════════════════════════ */
+var LINKS = {
+  vcip:   '',                                    /* ← paste V-CIP portal URL */
+  pos:    'https://pos-ops-portal.vercel.app/',
+  ai:     '',                                    /* ← paste if you deploy it */
+  roster: ''                                     /* ← lives inside V-CIP portal */
+};
+var LABELS = {
+  vcip:   'Open V-CIP Portal',
+  pos:    'Open POS Ops Portal',
+  ai:     'Open AI Audit Engine',
+  roster: 'Open Roster Engine'
+};
+document.querySelectorAll('.linkrow').forEach(function(row){
+  var key = row.getAttribute('data-link');
+  var url = LINKS[key];
+  if(url){
+    var host = url.replace(/^https?:\/\//,'').replace(/\/$/,'');
+    row.innerHTML = '<a class="golive" href="'+url+'" target="_blank" rel="noopener"><i></i>'+host+' \u2197</a>';
+    row.querySelector('a').setAttribute('aria-label', LABELS[key]);
+  } else {
+    row.innerHTML = '<span class="noaccess"><i></i>Internal \u2014 walkthrough on request</span>';
+  }
+});
 
 /* ── THEME ── */
 var swapBtn = document.getElementById('swapBtn');
