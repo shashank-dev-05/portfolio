@@ -396,7 +396,7 @@ footer{padding:2.8rem 0 4rem;border-top:1px solid var(--line)}
 <!-- ═════════ HERO ═════════ -->
 <header class="hero">
   <div class="wrap">
-    <div class="badge"><span class="dot"></span>Open to <b>AI Builder &amp; Solution Design</b> roles</div>
+    <div class="badge"><span class="dot"></span>Open to <b>AI Builder &amp; Founding Engineer</b> roles</div>
 
     <h1 class="name">
       <span class="ln"><span>SHASHANK</span></span>
@@ -404,10 +404,10 @@ footer{padding:2.8rem 0 4rem;border-top:1px solid var(--line)}
     </h1>
 
     <div class="spec">
-      <div>Discipline<b>AI Builder · Systems Design</b></div>
+      <div>Discipline<b>AI Builder · 0 → 1</b></div>
       <div>Currently<b>Razorpay</b></div>
       <div>Based<b>Bengaluru, India</b></div>
-      <div>Shipped<b>4 production systems</b></div>
+      <div>Shipped<b>5 builds, 4 in daily use</b></div>
     </div>
 
     <div class="hgrid">
@@ -418,7 +418,7 @@ footer{padding:2.8rem 0 4rem;border-top:1px solid var(--line)}
           friction before I design for it. Then I build the thing that removes it.
           <strong>Four systems in production</strong>, shipped solo: a verification portal running thousands of cases a day,
           a live analytics portal on the Freshdesk API, an AI audit engine, and a fairness-scored allocation system.
-          Domain knowledge is the hard part. The building I taught myself.
+          Nothing here is a demo — real people open these every working day. No CS degree; I taught myself by shipping.
         </p>
         <div class="acts">
           <a href="#work" class="b fill">See the work →</a>
@@ -582,6 +582,32 @@ footer{padding:2.8rem 0 4rem;border-top:1px solid var(--line)}
             <li>Week-off requests collected before the roster is finalised, plus backup activation for sick leave</li>
             <li>Edit mode, rebalance, allocation locking and CSV export for manager sign-off</li>
             <li>New-joiner and permanent-maker rules so trainees stay on maker duty until signed off</li>
+          </ul></div>
+        </div></div>
+      </article>
+
+      <article class="case glass rv d4">
+        <div class="ctrls" data-ctrl="pulse"></div>
+        <button class="casebtn" aria-expanded="false">
+          <span class="cno">05</span>
+          <span><span class="cname">MerchantPulse AI</span><span class="cstack">React 19 · Recharts · Vite · Razorpay Day0 Hackathon</span></span>
+          <span class="cflag ai">Hackathon</span>
+        </button>
+        <div class="casebody"><div class="caseinner">
+          <div>
+            <div class="linkrow" data-link="pulse"></div>
+            <p>A merchant health scorecard built for an internal hackathon against 480+ teams. The idea: give a merchant one screen that tells them how their business is actually doing, instead of twelve reports they have to assemble themselves.</p>
+            <div class="nums">
+              <div class="num"><span class="nv">480+</span><span class="nl">competing teams</span></div>
+              <div class="num"><span class="nv">6</span><span class="nl">dashboard modules</span></div>
+              <div class="num"><span class="nv">Days</span><span class="nl">idea to working demo</span></div>
+            </div>
+          </div>
+          <div><ul class="facts">
+            <li>AI-written summaries, loyalty spotlight cards, state-level geography breakdown and category ranking</li>
+            <li>Weekly, monthly and yearly time filters with animated chart transitions</li>
+            <li>Companion presentation built in HTML with 3D slide transitions and count-up animations</li>
+            <li>Built on Razorpay's own palette rather than generic dashboard styling</li>
           </ul></div>
         </div></div>
       </article>
@@ -764,14 +790,15 @@ var LINKS = {
   vcip:   'https://v-cip-portal.vercel.app/',
   pos:    'https://pos-ops-portal.vercel.app/',
   ai:     '',
-  roster: 'https://v-cip-portal.vercel.app/'
+  roster: 'https://v-cip-portal.vercel.app/',
+  pulse:  ''
 };
 var NOTE = {
   roster: 'Opens inside V-CIP Portal'
 };
 var LABEL = {
   vcip:'Open V-CIP Operations Portal', pos:'Open POS Ops Portal',
-  ai:'AI Quality Audit Engine', roster:'Open Roster Engine inside V-CIP Portal'
+  ai:'AI Quality Audit Engine', roster:'Open Roster Engine inside V-CIP Portal', pulse:'MerchantPulse AI'
 };
 
 /* in-card link row */
@@ -926,7 +953,7 @@ SYS.forEach(function(_,i){
 });
 function show(i){
   idx=i; var s=SYS[i];
-  mIdx.textContent='0'+(i+1)+' / 04';
+  mIdx.textContent='0'+(i+1)+' / 0'+SYS.length;
   mTtl.innerHTML=s.t; mDesc.innerHTML=s.d;
   v1.textContent=s.m[0][0]; k1.textContent=s.m[0][1];
   v2.textContent=s.m[1][0]; k2.textContent=s.m[1][1];
